@@ -28,7 +28,7 @@
 		"desc": "Szavazással átlehet ugrani az aktuális zenét."
 	},
 	"8": {
-		"name": "wheater",
-		"desc": "Új forrástól szedi ezentúl az információkat.\nMég csak angolul érhető el.\nÚj képekkel dolgozik amelyek éjszakai/nappaliak is."
+		"name": "weather",
+		"desc": "Új forrástól szedi ezentúl az információkat.\nÚj képekkel dolgozik amelyek éjszakai/nappaliak is.\n( Még csak angol nyelven érhető el. )"
 	}
 }
