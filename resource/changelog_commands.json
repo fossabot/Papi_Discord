@@ -1,0 +1,34 @@
+{
+	"1": {
+		"name": "github",
+		"desc": "A bot kódja megtekínthető online!"
+	},
+	"2": {
+		"name": "play",
+		"desc": "Zenére lehet rákeresni, vagy ha linket adsz meg akkor lejátsza azt."
+	},
+	"3": {
+		"name": "stop",
+		"desc": "Befejezi a zenélést a bot."
+	},
+	"4": {
+		"name": "volume",
+		"desc": "Beállítja a hangerejét a botnak\n( Naponta vissza áll 100 %-ra, server reset miatt )"
+	},
+	"5": {
+		"name": "pause",
+		"desc": "Megállítja az éppen lejátszodó zenét."
+	},
+	"6": {
+		"name": "resume",
+		"desc": "Folytatja a zenélést onnan ahonnan abbahagyta."
+	},
+	"7": {
+		"name": "skip",
+		"desc": "Szavazással átlehet ugrani az aktuális zenét."
+	},
+	"8": {
+		"name": "wheater",
+		"desc": "Új forrástól szedi ezentúl az információkat.\nMég csak angolul érhető el.\nÚj képekkel dolgozik amelyek éjszakai/nappaliak is."
+	}
+}

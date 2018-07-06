@@ -1,0 +1,136 @@
+{
+	"main_js": {
+		"loading": {
+			"nocmd": "Nincs parancs a components mappában!",
+			"cmdloading": "db parancs. Betöltés folyamatban!",
+			"found": "megtalálva!",
+			"loaded": "betöltve!",
+			"ready": "mostantól készen áll!",
+			"cmdspeed": "Parancs sebessége"
+		},
+		"database": {
+			"created": "adatbázis létrehozva!",
+			"useradded": "felhasználó hozzáadva az adatbázishoz!",
+			"permerr": " Nincs jog szintet állítani."
+		},
+		"errors": {
+			"cantsend": "A bot nemtud semilyen üzenetet küldeni.",
+			"debugcode": "Hibás kód:"
+		},
+		"logging": {
+			"dm_pre": "( Privát üzenet )",
+			"used": "felhasználó használta ezt a parancsot:"
+		},
+		"disconnect": "Lekapcsolódva!",
+		"reconnect": "Visszakapcsolódva!"
+	},
+	"leveling_system": {
+		"roles": {
+			"1": "* Alap szerver jogok.",
+			"2": "* Tudsz küldeni TSS üzeneteket.\n* Tudsz mozgatni embereket a voice szobákban.",
+			"3": "* Megtudod változtatni a beceneved.\n* Letudod némítani embereket a voice szobákban.",
+			"4": "* Megtudod változtatni mások becenevét.\n* Letudsz süketíteni embereket a voice szobákban.",
+			"5": "* Kitudsz törölni üzeneteket, illetve kitudsz tüzni üzeneteket.\n* Tudsz létrehozni meghívó linkeket.",
+			"6": "* Hozzátudsz adni illetve kitörölni Emotokat a szerverről.",
+			"7": "* Kitudsz rúgni embereket a szerverről.",
+			"8": "* Mi a faszom vagy te?"
+		},
+		"notfound": "szint nem található!",
+		"isnow": "mostantól",
+		"level": "szintű",
+		"levelup": "Szint lépés!",
+		"younow": "A te színted mostantól:",
+		"avaperm": "Mostantól vannak új jogaid!",
+		"missinglvl": "Hiányzó szintek készítés alatt...",
+		"lvlcreated": "szint mostantól elérhető!"
+	},
+	"components": {
+		"pic_create": "Kép generálása folyamatban...",
+		"color": {
+			"colorpermcreate": "A bot nemtud létrehozni új színt.",
+			"colorpermchange": "A bot nemtud változtatni színt."
+		},
+		"ping": {
+			"result": "Ping mérés eredménye",
+			"pinginprogress": "Discord.js API válaszideje",
+			"response": "válaszideje"
+		},
+		"purge": {
+			"msperm": "A botnak nincs joga üzeneteket törölni."
+		},
+		"weather": {
+			"from": "from",
+			"currentweather": "Current weather for",
+			"forecast": "Forecast for",
+			"temp": "Temerature",
+			"feels": "Feels Like",
+			"humid": "Humidity",
+			"pres": "Pressure",
+			"winds": "Winds"
+		},
+		"xp": {
+			"serverresult": "szerveren elért eredménye:",
+			"userinfo": "információi",
+			"newsystem": "Jelenlegi rendszer szerint:",
+			"oldsystem": "Régi rendszer szerint:",
+			"tppoint": "Tapasztalati pontok",
+			"msamount": "Üzenetek mennyisége",
+			"cmdamount": "Parancsok mennyisége",
+			"emotesamount": "Szerver Emotok mennyisége",
+			"linksamount": "Linkek mennyisége",
+			"piece": "darab"
+		},
+		"changelog": {
+			"title": "Changelog",
+			"version": "Verzió",
+			"systemchange": "Rendszerbeli változások",
+			"cmdchange": "Parancsbeli változások"
+		}
+	},
+	"musicplayer": {
+		"wentwrong": "Valamilyen probléma merült fel keresés közben.",
+		"choose": "Válassz egy számot!",
+		"nowplaying": "Lejátszás alatt",
+		"addedqueue": "Hozzáadva a lejátszási listához",
+		"notplaying": "Jelenleg nincs a szerveren lejátszás alatt semmi.",
+		"notsamech": "Nem vagy úgyan abban a szobában mint a bot.",
+		"suc_skipped": "Átugorva",
+		"vote_skip": "Sikeres szavazás!",
+		"volumenumber": "A hangerőnek 0 és 200 között kell lennie!",
+		"volumeset": "Hangerő beállítva",
+		"notpaused": "Már lejátszás alatt van.",
+		"sec_resumed": "Folytatás",
+		"same_ch": "Csatlakozz egy Voice szobába!",
+		"already_voted": "Már szavaztál!",
+		"already_paused": "A lejátszás már szüneteltetve van.",
+		"suc_pause": "Szüneteltetve"
+	},
+	"messages": {
+		"errtitle": "Hiba!",
+		"apierr": "API / Server oldali hiba!",
+		"noavatar": "A felhasználó nem rendelkezik avatarral!",
+		"zeroimg": "A véletlenszerűen kiválasztott hentai oldalon ilyen filterekkel nem található kép!\n\n**Próbáld meg újra vagy használj más filtereket.**",
+		"weather_cantfind": "A keresett helyszín nem található a Weather Underground adatbázisában.",
+		"xp_cantfind": "A felhasználó nem található meg a szerver adatbázisában!",
+		"privatemessage": "Ezt a parancsot csak szerveren lehet használni!",
+		"roleperm": "Nem rendelkezem szükséges szerver jogokkal!",
+		"onlycommand_desc": "Csak parancsot adtál meg! Nincs mivel filterezni!",
+		"gooduse": "Helyes használat",
+		"onlycommand_field": ".[parancs] [filter] <egyébfilter>",
+		"wrongfilter": "Rosszul adtad meg a filtert!\n100 vagy az alattinak kell lennie!",
+		"adminneed": "Adminisztrációs jog kell ennek a parancsnak a használatához!",
+		"colortitle_av": "Elérhető színek",
+		"colortitle_succ": "Szín megváltoztatva!",
+		"colortitle_create": "Szín elkészítve!",
+		"color_av": "szín mostantól elérhető ezen a szerveren!",
+		"zerocolor": "A szerveren nincsenek színek!",
+		"zerorule": "Nem található ilyen szín a szerveren!",
+		"cantchangecolor": "Nem sikerült megváltoztatni a színed!",
+		"changecolor": "Sikerült megváltoztatni a színed!",
+		"colorcreate": "mostantól használható!",
+		"colorexist": "A szín már létezik!",
+		"cantfindcolor": "Nem adtál meg színt!",
+		"hexcolor": "A színkód maximum 6 jegyű lehet!",
+		"notfoundlang": "Ilyen nyelv nem található!"
+	}
+}

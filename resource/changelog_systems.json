@@ -1,0 +1,18 @@
+{
+	"1": {
+		"name": "Multi Language System",
+		"desc": "Mostantól több nyelven is tud dolgozni a bot!\n( A váltás még nem lehetséges, azt még össze kell dolgoznom az adatbázissal )"
+	},
+	"2": {
+		"name": "Music System",
+		"desc": "A zene az jó! Tehát ezentúl a bot is nyomni fogja.\nHa érdekel a zene címe akkor még ki is írja. ( Azzal fog \"Játszani\", de emellett a chatbe is kifogja írni, de csak oda ahol kérték a zenét. )"
+	},
+	"3": {
+		"name": "Message System",
+		"desc": "Központi üzenet küldő rendszert hoztam létre. Igy nem kell minden dolognak külön leírni, hogy mit küldjön hova milyen formában."
+	},
+	"4": {
+		"name": "Emote System",
+		"desc": "A bot üzeneteiben ezentúl emotok jelennek meg."
+	}
+}

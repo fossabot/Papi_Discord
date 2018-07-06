@@ -1,0 +1,46 @@
+{
+  "name": "papi_bot",
+  "version": "1.2.0",
+  "description": "Personal Discord Bot",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "Node"
+  },
+  "keywords": [
+    "discord",
+    "papi",
+    "bot",
+    "xentinus"
+  ],
+  "author": "Xentinus",
+  "license": "ISC",
+  "dependencies": {
+    "booru": "^0.4.0",
+    "discord.js": "^11.3.2",
+    "ffmpeg-binaries": "^3.2.2",
+    "mysql": "^2.15.0",
+    "node-opus": "^0.3.0",
+    "wunderground-api": "^1.1.4",
+    "yt-search": "^0.1.4",
+    "ytdl-core": "^0.20.4"
+  },
+  "devDependencies": {
+    "dotenv": "^5.0.1",
+    "eslint": "^4.19.1",
+    "eslint-config-aqua": "^3.0.0"
+  },
+  "eslintConfig": {
+    "extends": "aqua",
+    "rules": {
+      "no-console": "off",
+      "no-unused-vars": "off",
+      "max-len": "off",
+      "no-warning-comments": "off",
+      "no-invalid-this": "off"
+    }
+  }
+}
