@@ -1,5 +1,7 @@
 ![alt text](https://i.imgur.com/6DwfjW8.png "Papi")
-#Changelog
+
+# Changelog
+
 [1.3.1]
 * Minor Bug fixing
 
