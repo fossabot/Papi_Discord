@@ -8,7 +8,6 @@ module.exports.run = (Papi, Discord, message, args, fulltext, con, ops) => {
 		if (err) return Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.messages.weather_cantfind);
 		const newicongif = await data.icon_url.replace('http://icons.wxug.com/i/c/k/', 'https://raw.githubusercontent.com/manifestinteractive/weather-underground-icons/master/dist/icons/white/png/256x256/');
 		const newiconpng = await newicongif.replace('.gif', '.png');
-		console.log(newiconpng);
 		let wind;
 		if (data.wind_string !== 'Calm') {
 			wind = `${data.wind_kph} KM/H ${Papi.lang.components.weather.from} ${data.wind_dir}`;

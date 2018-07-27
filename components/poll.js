@@ -8,8 +8,8 @@ module.exports.run = async (Papi, Discord, message, args, fulltext, con, ops) =>
 		.setFooter(message.author.username, message.author.displayAvatarURL)
 		.setColor(process.env.COLOR_H);
 	let msg = await message.channel.send({ embed: titdesc });
-	await msg.react('464742594019328000');
-	msg.react('464507221246607382');
+	await msg.react('472433629230792704');
+	msg.react('472433631475007488');
 	return undefined;
 };
 
