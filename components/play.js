@@ -1,14 +1,14 @@
 const ytdl = require('ytdl-core');
 const search = require('yt-search');
 
-module.exports.run = async (Papi, Discord, message, args, szoveg, con, ops) => {
+module.exports.run = async (Papi, Discord, message, args, fulltext, con, ops) => {
 	if (message.channel.type === 'dm') return Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.messages.privatemessage);
 	if (!message.member.voiceChannel) return Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.musicplayer.same_ch);
 
 	let validate = await ytdl.validateURL(args[0]);
 	if (!validate) {
 		let commandFile = require(`../tools/youtube_search.js`);
-		return commandFile.run(Papi, Discord, message, args, szoveg, con, ops);
+		return commandFile.run(Papi, Discord, message, args, fulltext, con, ops);
 	}
 	let info = await ytdl.getInfo(args[0]);
 
@@ -20,14 +20,20 @@ module.exports.run = async (Papi, Discord, message, args, szoveg, con, ops) => {
 	data.queue.push({
 		songTitle: info.title,
 		requester: message.author.username,
-		url: args[0],
+		view: Papi.replacesystem.numberformatUS(info.view_count),
+		thumbnail: info.thumbnail_url,
+		length: Papi.replacesystem.time(Papi, info.length_seconds),
+		url: info.video_url,
+		uploaded: info.published,
+		uploaderName: info.author.name,
+		uploaderURL: info.author.channel_url,
 		announceChannel: message.channel.id
 	});
 
 	if (!data.dispatcher) {
 		play(Papi, ops, data, message, Discord);
 	} else {
-		Papi.messagesystem.musictitdesc(Papi, Discord, message, Papi.lang.musicplayer.addedqueue, info.title);
+		Papi.messagesystem.musicaddqueue(Papi, Discord, message, Papi.lang.musicplayer.addedqueue, info.title, info.video_url, info.thumbnail_url, Papi.replacesystem.time(Papi, info.length_seconds), data.queue.length);
 	}
 
 	ops.active.set(message.guild.id, data);
@@ -35,14 +41,16 @@ module.exports.run = async (Papi, Discord, message, args, szoveg, con, ops) => {
 };
 
 async function play(Papi, ops, data, message, Discord) {
-	Papi.messagesystem.musicfixchtitdesc(Papi, Discord, message, Papi.lang.musicplayer.nowplaying, data.queue[0].songTitle, data.queue[0].announceChannel, Papi.emotes.next);
-	Papi.user.setActivity(`${data.queue[0].songTitle}`, { type: 'PLAYING' });
 	data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, { filter: 'audioonly' }));
 	data.dispatcher.setVolume(Papi.volume / 100);
 	data.dispatcher.guildID = data.guildID;
 	data.dispatcher.once('end', function finishit() {
 		finish(Papi, ops, this, message, Discord);
 	});
+	if (message.guild.voiceConnection) {
+		Papi.messagesystem.musicnowplaying(Papi, Discord, message, Papi.lang.musicplayer.nowplaying, data.queue[0].songTitle, data.queue[0].announceChannel, data.queue[0].view, data.queue[0].length, data.queue[0].thumbnail, data.queue[0].url, data.queue[0].uploaded, data.queue[0].uploaderName, data.queue[0].uploaderURL);
+		Papi.user.setActivity(`${data.queue[0].songTitle}`, { type: 'PLAYING' });
+	}
 }
 
 function finish(Papi, ops, dispatcher, message, Discord) {
@@ -57,6 +65,7 @@ function finish(Papi, ops, dispatcher, message, Discord) {
 		Papi.user.setActivity(undefined);
 		if (vc) vc.leave();
 	}
+	return undefined;
 }
 
 module.exports.help = { name: 'play' };

@@ -1,4 +1,4 @@
-module.exports.run = async (Papi, Discord, message, args, szoveg, con, ops) => {
+module.exports.run = async (Papi, Discord, message, args, fulltext, con, ops) => {
 	if (message.channel.type === 'dm') return Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.messages.privatemessage);
 	let fetched = ops.active.get(message.guild.id);
 	if (!fetched) return Papi.messagesystem.onlydesc(Papi, Discord, message, Papi.lang.musicplayer.notplaying);
@@ -13,7 +13,7 @@ module.exports.run = async (Papi, Discord, message, args, szoveg, con, ops) => {
 		await fetched.dispatcher.end();
 		return undefined;
 	}
-	Papi.messagesystem.musictitdescvote(Papi, Discord, message, Papi.lang.musicplayer.vote_skip, fetched.queue[0].voteSkips.length, required, Papi.emotes.complete);
+	Papi.messagesystem.musictitdescvote(Papi, Discord, message, Papi.lang.musicplayer.vote_skip, fetched.queue[0].voteSkips.length, required, Papi.icons.check);
 	return undefined;
 };
 

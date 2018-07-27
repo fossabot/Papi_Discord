@@ -1,6 +1,6 @@
-module.exports.run = async (Papi, Discord, message, args, szoveg, con, ops) => {
+module.exports.run = async (Papi, Discord, message, args, fulltext, con, ops) => {
 	const generalas = new Discord.RichEmbed()
-		.setDescription(`${Papi.lang.components.pic_create}`)
+		.setDescription(`${Papi.icons.download} ${Papi.lang.components.pic_create}`)
 		.setFooter(message.author.username, message.author.displayAvatarURL)
 		.setColor(process.env.COLOR_H);
 	let msg = await message.channel.send({ embed: generalas });

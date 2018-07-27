@@ -2,7 +2,7 @@
 
 module.exports.titdesc = function sendembed(Papi, Discord, message, title, desc, icon) {
 	if (icon === undefined) {
-		icon = Papi.emotes.x;
+		icon = Papi.icons.x;
 	}
 	let titdesc = new Discord.RichEmbed()
 		.setTitle(`${icon} ${title}`)
@@ -14,7 +14,7 @@ module.exports.titdesc = function sendembed(Papi, Discord, message, title, desc,
 
 module.exports.titfield = function sendembed(Papi, Discord, message, title, fieldtitle, fielddesc, icon) {
 	if (icon === undefined) {
-		icon = Papi.emotes.x;
+		icon = Papi.icons.x;
 	}
 	let titfield = new Discord.RichEmbed()
 		.setTitle(`${icon} ${title}`)
@@ -26,7 +26,7 @@ module.exports.titfield = function sendembed(Papi, Discord, message, title, fiel
 
 module.exports.titdescfield = function sendembed(Papi, Discord, message, title, desc, fieldtitle, fielddesc, icon) {
 	if (icon === undefined) {
-		icon = Papi.emotes.x;
+		icon = Papi.icons.x;
 	}
 	let titdescfield = new Discord.RichEmbed()
 		.setTitle(`${icon} ${title}`)
@@ -39,7 +39,7 @@ module.exports.titdescfield = function sendembed(Papi, Discord, message, title, 
 
 module.exports.onlydesc = function sendembed(Papi, Discord, message, desc, icon) {
 	if (icon === undefined) {
-		icon = Papi.emotes.x;
+		icon = Papi.icons.x;
 	}
 	let onlydesc = new Discord.RichEmbed()
 		.setDescription(`${desc}`)
@@ -51,19 +51,22 @@ module.exports.onlydesc = function sendembed(Papi, Discord, message, desc, icon)
 // ++++++++++ Music System ++++++++++
 
 // Added to queue
-module.exports.musictitdesc = function sendembed(Papi, Discord, message, title, desc) {
-	let musictitdesc = new Discord.RichEmbed()
-		.setTitle(`${Papi.emotes.add} ${title}`)
-		.setDescription(`${desc}`)
+module.exports.musicaddqueue = function sendembed(Papi, Discord, message, title, musicname, url, thumbnail, length, sorszam) {
+	let musicaddqueue = new Discord.RichEmbed()
+		.setTitle(`${Papi.icons.add} ${title}`)
+		.setDescription(`[${musicname}](${url})`)
+		.setThumbnail(`${thumbnail}`)
+		.addField(`${Papi.lang.musicplayer.length}`, `${length}`, true)
+		.addField(`Sorszám`, `${sorszam}`, true)
 		.setFooter(message.author.username, message.author.displayAvatarURL)
 		.setColor(process.env.COLOR_H);
-	message.channel.send({ embed: musictitdesc });
+	message.channel.send({ embed: musicaddqueue });
 };
 
 // Complete / Successfull vote for skip
 module.exports.musictitdescvote = function sendembed(Papi, Discord, message, title, voted, need) {
 	let musictitdescvote = new Discord.RichEmbed()
-		.setTitle(`${Papi.emotes.complete} ${title}`)
+		.setTitle(`${Papi.icons.check} ${title}`)
 		.setDescription(`${voted} / ${need}`)
 		.setFooter(message.author.username, message.author.displayAvatarURL)
 		.setColor(process.env.COLOR_H);
@@ -71,20 +74,25 @@ module.exports.musictitdescvote = function sendembed(Papi, Discord, message, tit
 };
 
 // Now Playing
-module.exports.musicfixchtitdesc = function sendembed(Papi, Discord, message, title, musicname, channel) {
-	let musicfixchtitdesc = new Discord.RichEmbed()
-		.setTitle(`${Papi.emotes.play} ${title}`)
-		.setDescription(`${musicname}`)
+module.exports.musicnowplaying = function sendembed(Papi, Discord, message, title, musicname, channel, view, length, thumbnail, url, uploaded, uploader, uploaderURL) {
+	let musicnowplaying = new Discord.RichEmbed()
+		.setTitle(`${Papi.icons.play} ${title}`)
+		.setDescription(`[${musicname}](${url})`)
+		.setThumbnail(`${thumbnail}`)
+		.addField(`${Papi.lang.musicplayer.length}`, `${length}`, true)
+		.addField(`${Papi.lang.musicplayer.view}`, `${view}`, true)
+		.addField(`${Papi.lang.musicplayer.uploader}`, `[${uploader}](${uploaderURL})`, true)
+		.addField(`${Papi.lang.musicplayer.uploaded}`, `${Papi.replacesystem.relativetime(Papi, Date.now(), uploaded)}`, true)
 		.setFooter(message.author.username, message.author.displayAvatarURL)
 		.setColor(process.env.COLOR_H);
-	Papi.channels.get(channel).send({ embed: musicfixchtitdesc });
+	Papi.channels.get(channel).send({ embed: musicnowplaying });
 };
 
 // ++++++++++ Coloring System ++++++++++
 
 module.exports.colortitarray = function sendembed(Papi, Discord, message, title, colorarray) {
 	let titdesc = new Discord.RichEmbed()
-		.setTitle(`${Papi.emotes.search} ${title}`)
+		.setTitle(`${Papi.icons.search} ${title}`)
 		.setDescription(`${colorarray}`)
 		.setFooter(message.author.username, message.author.displayAvatarURL)
 		.setColor(process.env.COLOR_H);

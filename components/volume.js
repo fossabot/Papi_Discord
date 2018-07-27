@@ -1,4 +1,4 @@
-module.exports.run = (Papi, Discord, message, args, szoveg, con, ops) => {
+module.exports.run = (Papi, Discord, message, args, fulltext, con, ops) => {
 	if (message.channel.type === 'dm') return Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.messages.privatemessage);
 	let fetched = ops.active.get(message.guild.id);
 	if (!fetched) return Papi.messagesystem.onlydesc(Papi, Discord, message, Papi.lang.musicplayer.notplaying);
@@ -11,13 +11,13 @@ module.exports.run = (Papi, Discord, message, args, szoveg, con, ops) => {
 
 	let icon;
 	if (args[0] > 70) {
-		icon = Papi.emotes.fullvol;
+		icon = Papi.icons.fullvol;
 	} else if ((args[0] <= 70) && (args[0] > 30)) {
-		icon = Papi.emotes.halfvol;
+		icon = Papi.icons.halfvol;
 	} else if ((args[0] <= 30) && (args[0] > 0)) {
-		icon = Papi.emotes.lowvol;
+		icon = Papi.icons.lowvol;
 	} else if (args[0] <= 0) {
-		icon = Papi.emotes.novol;
+		icon = Papi.icons.novol;
 	}
 
 	Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.musicplayer.volumeset, `${args[0]} %`, icon);

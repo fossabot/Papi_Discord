@@ -57,13 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
-# ESlint Settings
-.eslintrc.json
-
 # Visual Studio Folder
 .vscode
-todo.txt
 
 # Testing
 test.js
 sample.js
+need.todo

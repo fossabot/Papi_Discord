@@ -14,7 +14,7 @@ module.exports.set = async function setcolor(Papi, Discord, message, args) {
 	try {
 		await message.member.removeRoles(colors);
 		await message.member.addRole(rolecheck);
-		Papi.messagesystem.colormessage(Papi, Discord, message, Papi.lang.messages.colortitle_succ, Papi.lang.messages.changecolor, rolecheck, Papi.emotes.complete);
+		Papi.messagesystem.colormessage(Papi, Discord, message, Papi.lang.messages.colortitle_succ, Papi.lang.messages.changecolor, rolecheck, Papi.icons.check);
 	} catch (err) {
 		Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.messages.cantchangecolor);
 		console.log(err.message);
@@ -32,7 +32,7 @@ module.exports.create = async function createcolor(Papi, Discord, message, args)
 				permission: []
 			});
 			console.log(`( ${message.guild.name} ) [#${args[0]}] ${Papi.lang.messages.color_av}`);
-			Papi.messagesystem.colormessage(Papi, Discord, message, Papi.lang.messages.colortitle_create, Papi.lang.messages.colorcreate, role, Papi.emotes.add);
+			Papi.messagesystem.colormessage(Papi, Discord, message, Papi.lang.messages.colortitle_create, Papi.lang.messages.colorcreate, role, Papi.icons.add);
 		} catch (err) {
 			console.error(err.stack);
 		}

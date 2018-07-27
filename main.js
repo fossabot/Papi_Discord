@@ -13,15 +13,12 @@ Papi.lang = require('./lang/hu_HU.json');
 Papi.levelingsystem = require('./tools/leveling_system.js');
 Papi.coloringsystem = require('./tools/coloring_system');
 Papi.messagesystem = require('./tools/message_system.js');
-
-// Changelog
-Papi.changelogcommands = require('./resource/changelog_commands.json');
-Papi.changelogsystems = require('./resource/changelog_systems.json');
+Papi.replacesystem = require('./tools/replace_system.js');
 
 // Other resources
 Papi.commands = new Discord.Collection();
 Papi.levelinfo = require('./resource/leveling_system.json');
-Papi.emotes = require('./resource/bot_icons.json');
+Papi.icons = require('./resource/bot_icons.json');
 Papi.volume = 100;
 
 // Saving compontents
@@ -51,7 +48,6 @@ fs.readdir(`./components/`, (err, files) => {
 		Papi.commands.set(props.help.name, props);
 		console.log(`{ ${i + 1} / ${jsfiles.length} } ${file} ${Papi.lang.main_js.loading.loaded}`);
 	});
-	console.log();
 });
 
 Papi.on('ready', async () => {
@@ -116,7 +112,7 @@ Papi.on('message', async message => {
 	// Split message
 	const args = message.content.slice(matchedPrefix.length).trim().split(/\s+/g);
 	const cmd = args.shift().toLocaleLowerCase();
-	const szoveg = message.content.slice(matchedPrefix.length + cmd.length).trim();
+	const fulltext = message.content.slice(matchedPrefix.length + cmd.length).trim();
 
 	// Check SEND permission
 	if (message.channel.type !== 'dm') {
@@ -133,10 +129,9 @@ Papi.on('message', async message => {
 		};
 		console.time(`${Papi.lang.main_js.loading.cmdspeed} ( ${cmd} )`);
 		let commandFile = Papi.commands.get(cmd);
-		commandFile.run(Papi, Discord, message, args, szoveg, con, ops);
+		commandFile.run(Papi, Discord, message, args, fulltext, con, ops);
 		console.timeEnd(`${Papi.lang.main_js.loading.cmdspeed} ( ${cmd} )`);
 	} catch (err) {
-		// Catch debug code if there is an error
 		console.error(err.message);
 		console.log(`${Papi.lang.main_js.errors.debugcode} ${message.content}`);
 		return;

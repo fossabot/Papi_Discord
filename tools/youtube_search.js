@@ -1,6 +1,6 @@
 const search = require('yt-search');
 
-module.exports.run = (Papi, Discord, message, args, szoveg, con, ops) => {
+module.exports.run = (Papi, Discord, message, args, fulltext, con, ops) => {
 	if (message.channel.type === 'dm') return Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.messages.privatemessage);
 	search(args.join(' '), (err, res) => {
 		if (err) return Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.messages.errtitle, Papi.lang.musicplayer.wentwrong);
@@ -9,15 +9,13 @@ module.exports.run = (Papi, Discord, message, args, szoveg, con, ops) => {
 		for (var i in videos) {
 			resp += `**[ ${parseInt(i) + 1} ]**  ${videos[i].title}\n`;
 		}
-		// resp += `\n**${Papi.lang.musicplayer.choose} \`1-${videos.length}\``;
-		Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.musicplayer.choose, resp, Papi.emotes.search);
-		// message.channel.send(resp);
+		Papi.messagesystem.titdesc(Papi, Discord, message, Papi.lang.musicplayer.choose, resp, Papi.icons.search);
 		const filter = mf => !isNaN(mf.content) && mf.content < videos.length + 1 && mf.content > 0;
 		const collector = message.channel.createMessageCollector(filter);
 		collector.videos = videos;
 		collector.once('collect', function asd(mf) {
 			let commandFile = require(`../components/play.js`);
-			commandFile.run(Papi, Discord, message, [this.videos[parseInt(mf.content) - 1].url], szoveg, con, ops);
+			return commandFile.run(Papi, Discord, message, [this.videos[parseInt(mf.content) - 1].url], fulltext, con, ops);
 		});
 		return undefined;
 	});

@@ -1,136 +1,161 @@
 {
-	"main_js": {
-		"loading": {
-			"nocmd": "There is no command in the components folder!",
-			"cmdloading": "command. Loading is in progress!",
-			"found": "founded!",
-			"loaded": "loaded!",
-			"ready": "is now READY!",
-			"cmdspeed": "Command Speed"
-		},
-		"database": {
-			"created": "Database created!",
-			"useradded": "user is added to the database!",
-			"permerr": " The bot has no permission to set level."
-		},
-		"errors": {
-			"cantsend": "The bot cant send any message!",
-			"debugcode": "Debug Code:"
-		},
-		"logging": {
-			"dm_pre": "( Private Message )",
-			"used": "user used this command:"
-		},
-		"disconnect": "Disconnected!",
-		"reconnect": "Reconnected!"
-	},
-	"leveling_system": {
-		"roles": {
-			"1": "* Basic server rights.",
-			"2": "* You can send TSS messages.\n* You can move users in voice rooms.",
-			"3": "* You can change your nickname.\n* You can mute users in voice rooms.",
-			"4": "* You can change others nickname.\n* You can deafening users in voice rooms.",
-			"5": "* You can pin or delete messages.\n* You can create invite link.",
-			"6": "* You can add or delete Emotes from the server.",
-			"7": "* You can kick users from the server.",
-			"8": "* Who the fuck are you?"
-		},
-		"notfound": "level not found!",
-		"isnow": "is now",
-		"level": "level",
-		"levelup": "Level UP!",
-		"younow": "Your level is now:",
-		"avaperm": "From now, you have new permissions!",
-		"missinglvl": "Missing levels is now creating...",
-		"lvlcreated": "level is now available!"
-	},
-	"components": {
-		"pic_create": "Picture generating is in progress.",
-		"color": {
-			"colorpermcreate": "The bot has no permission to create a new color.",
-			"colorpermchange": "The bot has no permission to change color."
-		},
-		"ping": {
-			"result": "Ping measurement result",
-			"pinginprogress": "Ping measurement is in progress...",
-			"response": "response time"
-		},
-		"purge": {
-			"msperm": "The bot has no permission to delete messages."
-		},
-		"weather": {
-			"from": "from",
-			"currentweather": "Current weather for",
-			"forecast": "Forecast for",
-			"temp": "Temerature",
-			"feels": "Feels Like",
-			"humid": "Humidity",
-			"pres": "Pressure",
-			"winds": "Winds"
-		},
-		"xp": {
-			"serverresult": "achieved results in this server:",
-			"userinfo": "information",
-			"newsystem": "Under the current system:",
-			"oldsystem": "Under the old system:",
-			"tppoint": "Experience points",
-			"msamount": "Amount of messages",
-			"cmdamount": "Amount of commands",
-			"emotesamount": "Amount of server emotes",
-			"linksamount": "Amount of links",
-			"piece": "piece"
-		},
-		"changelog": {
-			"title": "Changelog",
-			"version": "Version",
-			"systemchange": "System changes",
-			"cmdchange": "Command changes"
-		}
-	},
-	"musicplayer": {
-		"wentwrong": "Sorry, something went wrong.",
-		"choose": "Choose a number!",
-		"nowplaying": "Now Playing",
-		"addedqueue": "Added to Queue",
-		"notplaying": "There currently isn't any music playing in the guild!",
-		"notsamech": "Sorry, you currently aren't in the same channel as the bot!",
-		"suc_skipped": "Skipped",
-		"vote_skip": "Successfully voted!",
-		"volumenumber": "Please input a number between 0-200",
-		"volumeset": "Volume set",
-		"notpaused": "This music isnt paused.",
-		"sec_resumed": "Resumed",
-		"same_ch": "Please connect to a Vioce channel!",
-		"already_voted": "You already voted!",
-		"already_paused": "This music is already paused.",
-		"suc_pause": "Paused"
-	},
-	"messages": {
-		"errtitle": "Error!",
-		"apierr": "API / Server side error!",
-		"noavatar": "The user has no avatar.",
-		"zeroimg": "There is no picture on the randomly selected hentai side with this filters.\n\n**Try again or use other filters.**",
-		"weather_cantfind": "The location you requested was not found in the Weather Underground database.",
-		"xp_cantfind": "The user can not be found in the server database!",
-		"privatemessage": "This command can only be used on a server!",
-		"roleperm": "I don't have permission!",
-		"onlycommand_desc": "You just gave me a command! There is no any filter.",
-		"onlycommand_field": "Good use', '.[command] [filter] <otherfilter>",
-		"wrongfilter": "You misspelled the filter.\nMust be 100 or below!",
-		"adminneed": "You need Administrative permission to use this command!",
-		"colortitle_av": "Available colors",
-		"colortitle_succ": "Your color has been changed.",
-		"colortitle_create": "Color is created!",
-		"setcolor": "setcolor COLOR | you can color yourself! (Without @#)",
-		"color_av": "color is now available on this server!",
-		"zerocolor": "There are no colors on this server.",
-		"zerorule": "This color not found on this server!",
-		"cantchangecolor": "Could not change your color!",
-		"changecolor": "Your color is changed to this:",
-		"colorcreate": "can now be used",
-		"colorexist": "is already exists!",
-		"cantfindcolor": "You didn't give color!",
-		"hexcolor": "The color code can be up to 6 digits!",
-		"notfoundlang": "There is no such language!"
-	}
+    "components": {
+        "botinfo": {
+            "systeminfo": "System Information",
+            "cpuusage": "CPU Usage",
+            "memusage": "Memory Usage",
+            "arch": "Architecture",
+            "platform": "Platform",
+            "uptime": "Uptime",
+            "network": "Network Speed",
+            "discordinfo": "Discord Information",
+            "servers": "Servers",
+            "channels": "Channels",
+            "users": "Users",
+            "icons": "Icons",
+            "developer": "Developer",
+            "repository": "Repository",
+            "version": "Version"
+        },
+        "color": {
+            "colorpermchange": "The bot has no permission to change color.",
+            "colorpermcreate": "The bot has no permission to create a new color."
+        },
+        "pic_create": "Picture generating is in progress.",
+        "ping": {
+            "pinginprogress": "Ping measurement is in progress...",
+            "response": "response time",
+            "result": "Ping measurement result"
+        },
+        "polltitle": "Vote!",
+        "purge": {
+            "msperm": "The bot has no permission to delete messages."
+        },
+        "weather": {
+            "currentweather": "Current weather for",
+            "feels": "Feels Like",
+            "forecast": "Forecast for",
+            "from": "from",
+            "humid": "Humidity",
+            "pres": "Pressure",
+            "temp": "Temerature",
+            "winds": "Winds"
+        },
+        "xp": {
+            "cmdamount": "Amount of commands",
+            "emotesamount": "Amount of server emotes",
+            "linksamount": "Amount of links",
+            "msamount": "Amount of messages",
+            "newsystem": "Under the current system:",
+            "oldsystem": "Under the old system:",
+            "piece": "piece",
+            "serverresult": "achieved results in this server:",
+            "tppoint": "Experience points",
+            "userinfo": "information"
+        }
+    },
+    "leveling_system": {
+        "avaperm": "From now, you have new permissions!",
+        "isnow": "is now",
+        "level": "level",
+        "levelup": "Level UP!",
+        "lvlcreated": "level is now available!",
+        "missinglvl": "Missing levels is now creating...",
+        "notfound": "level not found!",
+        "roles": {
+            "1": "* Basic server rights.",
+            "2": "* You can send TSS messages.\n* You can move users in voice rooms.",
+            "3": "* You can change your nickname.\n* You can mute users in voice rooms.",
+            "4": "* You can change others nickname.\n* You can deafening users in voice rooms.",
+            "5": "* You can pin or delete messages.\n* You can create invite link.",
+            "6": "* You can add or delete Emotes from the server.",
+            "7": "* You can kick users from the server.",
+            "8": "* Who the fuck are you?"
+        },
+        "younow": "Your level is now:"
+    },
+    "main_js": {
+        "database": {
+            "created": "Database created!",
+            "permerr": " The bot has no permission to set level.",
+            "useradded": "user is added to the database!"
+        },
+        "disconnect": "Disconnected!",
+        "errors": {
+            "cantsend": "The bot cant send any message!",
+            "debugcode": "Debug Code:"
+        },
+        "loading": {
+            "cmdloading": "command. Loading is in progress!",
+            "cmdspeed": "Command Speed",
+            "found": "founded!",
+            "loaded": "loaded!",
+            "nocmd": "There is no command in the components folder!",
+            "ready": "is now READY!"
+        },
+        "logging": {
+            "dm_pre": "( Private Message )",
+            "used": "user used this command:"
+        },
+        "reconnect": "Reconnected!"
+    },
+    "messages": {
+        "adminneed": "You need Administrative permission to use this command!",
+        "apierr": "API / Server side error!",
+        "cantchangecolor": "Could not change your color!",
+        "cantfindcolor": "You didn't give color!",
+        "changecolor": "Your color is changed to this:",
+        "color_av": "color is now available on this server!",
+        "colorcreate": "can now be used",
+        "colorexist": "is already exists!",
+        "colortitle_av": "Available colors",
+        "colortitle_create": "Color is created!",
+        "colortitle_succ": "Your color has been changed.",
+        "errtitle": "Error!",
+        "gooduse": "Best use",
+        "hexcolor": "The color code can be up to 6 digits!",
+        "noavatar": "The user has no avatar.",
+        "notfoundlang": "There is no such language!",
+        "onlycommand_desc": "You just gave me a command! There is no any filter.",
+        "onlycommand_field": "Good use', '.[command] [filter] <otherfilter>",
+        "privatemessage": "This command can only be used on a server!",
+        "roleperm": "I don't have permission!",
+        "weather_cantfind": "The location you requested was not found in the Weather Underground database.",
+        "wrongfilter": "You misspelled the filter.\nMust be 100 or below!",
+        "xp_cantfind": "The user can not be found in the server database!",
+        "zerocolor": "There are no colors on this server.",
+        "zeroimg": "There is no picture on the randomly selected hentai side with this filters.\n\n**Try again or use other filters.**",
+        "zerorule": "This color not found on this server!",
+        "sec_ago": "seconds ago",
+        "min_ago": "minutes ago",
+        "hour_ago": "hours ago",
+        "day_ago": "days ago",
+        "month_ago": "months ago",
+        "year_ago": "years ago",
+        "hour": "hours",
+        "min": "minutes",
+        "sec": "seconds"
+    },
+    "musicplayer": {
+        "addedqueue": "Added to Queue",
+        "already_paused": "This music is already paused.",
+        "already_voted": "You already voted!",
+        "choose": "Choose a number!",
+        "notpaused": "This music isnt paused.",
+        "notplaying": "There currently isn't any music playing in the guild!",
+        "notsamech": "Sorry, you currently aren't in the same channel as the bot!",
+        "nowplaying": "Now Playing",
+        "same_ch": "Please connect to a Vioce channel!",
+        "sec_resumed": "Resumed",
+        "suc_pause": "Paused",
+        "suc_skipped": "Skipped",
+        "volumenumber": "Please input a number between 0-200",
+        "volumeset": "Volume set",
+        "vote_skip": "Successfully voted!",
+        "wentwrong": "Sorry, something went wrong.",
+        "view": "View count",
+        "length": "Video length",
+        "uploader": "Author",
+        "uploaded": "Uploaded"
+    }
 }
